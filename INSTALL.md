@@ -18,9 +18,8 @@ To install the l10n into your databse the following steps are requered:
 
 ### 1. Install the libraries for the C/C++ stored procedures
 
-
-The easiest way to to this on Debian/Ubuntu is to build packages and install
-them:
+The easiest way to to this on Debian 8.x and Ubuntu 14.04 is to build
+packages and install them:
 
 ```sh
 make deb
@@ -28,6 +27,12 @@ make deb
 
 To make this work you will need to install the required libraries:
 `libicu-dev, libkakasi2-dev, postgresql-server-dev-9.4`
+
+You will also need a backport of libutf8proc-dev to build this on debian
+stable.  See https://wiki.debian.org/SimpleBackportCreation for instructions
+on how to build one.
+
+For newer Versions of Debian and Ubuntu >= 16.04 use the master branch.
 
 On other Distributions it should work to use `make/make install`.
 I would be happy if somebody would contribute a spec-file for rpm based
